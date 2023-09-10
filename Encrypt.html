@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Encryption vs. Hashing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('encryption-vs-hashing.jpg'); /* Add your background image URL here */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            /* background-color: rgba(33, 46, 236, 0.9); */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        p {
+            color: #777;
+        }
+
+        .info {
+            margin-bottom: 20px;
+        }
+
+        .info h2 {
+            margin-top: 20px;
+        }
+
+        .toggle-button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 8px 16px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .expanded {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <h1>Encryption vs. Hashing</h1>
+            <div class="info">
+                <h2>Encryption</h2>
+                <p>
+                    Encryption is a process of converting plaintext data into ciphertext, making it unreadable without the proper decryption key. It is primarily used to protect data confidentiality.
+                </p>
+                <p>
+                    Encryption is a reversible process, meaning you can decrypt the data back to its original form with the correct key. Common encryption algorithms include AES, RSA, and DES.
+                </p>
+            </div>
+
+            <div class="info">
+                <h2>Hashing</h2>
+                <p>
+                    Hashing is a process of converting data (of any size) into a fixed-length string of characters, which is typically a hash value. It is primarily used to verify data integrity.
+                </p>
+                <p>
+                    Hashing is an irreversible process, and you cannot retrieve the original data from the hash value. Common hash algorithms include SHA-256, MD5, and SHA-1.
+                </p>
+            </div>
+
+            <div class="info">
+                <h2>Comparison</h2>
+                <p>
+                    In summary, encryption is used to secure data by making it unreadable to unauthorized users but allows for decryption with the right key. Hashing, on the other hand, creates a fixed-size hash value from data and is irreversible, making it suitable for data integrity checks.
+                </p>
+            </div>
+
+            <button class="toggle-button" id="show-more-button">Show More Information</button>
+            <div class="info hidden" id="extra-info">
+                <h2>When to Use Each?</h2>
+                <p>
+                    You should use encryption when you need to protect sensitive data during transmission or storage. For example, when sending confidential information over the internet, you should encrypt it to ensure that even if intercepted, it remains confidential.
+                </p>
+                <p>
+                    Hashing, on the other hand, is ideal for verifying data integrity. It helps ensure that data hasn't been tampered with during transmission or storage. For example, websites use hashes to verify that downloaded files are identical to the original ones.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const showMoreButton = document.getElementById('show-more-button');
+        const extraInfo = document.getElementById('extra-info');
+
+        showMoreButton.addEventListener('click', () => {
+            extraInfo.classList.toggle('hidden');
+            showMoreButton.classList.toggle('expanded');
+        });
+    </script>
+</body>
+</html>
